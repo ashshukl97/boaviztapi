@@ -505,6 +505,7 @@ func getMetal(instance VantageExport, allInstances []VantageExport) VantageExpor
 		"r3":         "8xlarge",
 		"r4":         "16xlarge",
 		"t1":         "micro",
+		"r7i":        "metal",
 	}
 	platformString := largestInstance[parts[0]]
 
@@ -516,7 +517,6 @@ func getMetal(instance VantageExport, allInstances []VantageExport) VantageExpor
 	if parts[1] == platformString {
 		return instance
 	}
-
 	metalString := fmt.Sprintf("%s.%s", parts[0], platformString)
 
 	// find the metal instance
